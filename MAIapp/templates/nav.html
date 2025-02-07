@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+<div id="nav-ctn">
+    <nav id="nav" class="lato">
+        <!-- Logo -->
+        <a href="#" id="logo">
+            <img src="{% static 'img/mailogo.png' %}" alt="Logo">
+        </a>
+        <!-- Navbar items -->
+        <ul id="nav-buttons">
+            <li><a href="#empresa">EMPRESA</a></li>
+            <li><a href="#productos">PRODUCTOS Y SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+        <!-- Button -->
+        <a href="#appointment"> </a>
+    </nav>
+</div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
