@@ -103,7 +103,7 @@ a {
 
 #second-hero {
     background-color: white;
-    color: black;
+    color: black !important;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -111,10 +111,9 @@ a {
     align-items: center;
 }
 
-.second-hero-text-ctn{
+.second-hero-text-ctn {
     color: black !important;
 }
-
 
 #second-hero-text-ctn{
     display: flex;
@@ -127,7 +126,7 @@ a {
 }
 
 .second-hero-left {
-    color: black;
+    color: black !important;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -135,6 +134,7 @@ a {
 }
 
 .second-hero-right {
+    color: black !important;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -142,7 +142,7 @@ a {
 }
 
 .second-hero-title {
-    color: black;
+    color: black !important;
     font-family: "Lato", sans-serif;
     font-weight: 300;
     margin-top: 20px;
@@ -152,6 +152,7 @@ a {
 }
 
 .second-hero-text {
+    color: black !important;
     width: clamp(300px, 50vw, 500px);
     font-family: sans-serif;
     overflow: hidden;
@@ -161,6 +162,7 @@ a {
 }
 
 .second-hero-subtitle {
+    color: black !important;
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-family: sans-serif;
