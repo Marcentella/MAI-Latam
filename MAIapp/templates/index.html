@@ -1,72 +1,86 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/jQuery-JavaScript-Library-v3.7.1.js' %}"></script>
     <title>MAI</title>
 </head>
 <body>
     {% include 'nav.html' %}
 
     <section id="main-hero">
-        <span id="main-hero-title">Garantizando su satisfacción en los productos y servicios que ofrecemos en procesos industriales</span>
+        <div id="main-hero-title-ctn">
+            <span id="main-hero-title">Garantizando su satisfacción en los productos y servicios que ofrecemos en procesos industriales</span>
+        </div>
         <div id="main-hero-img">
             <img src="{% static 'img/bg-cta.jpg' %}" alt="main-hero-img">
         </div>
     </section>
 
-    <section id="second-hero">
-        <div id="second-hero-img">
+    <section id="second-hero" >
+        <div id="second-hero-img" >
+            <p id="quienes"> </p>
             <img src="{% static 'img/mailogo.png' %}" alt="second-hero-img">
         </div>
         
         <div id="second-hero-text-ctn">
-            <div class="second-hero-left">
-                <h2 class="second-hero-title">Quienes Somos</h2>
+            <div id="second-hero-first">
+                <h2 class="second-hero-title">Quiénes Somos</h2>
                 <p class="second-hero-text">Somos una empresa especializada en mantenimiento industrial, enfocada en líneas de sellado, envasado, codificado y paletizado. Contamos con un área de técnicos experimentados y un alto estándar de calidad. Contamos con alianzas estratégicas para garantizar equipos y suministros confiables.</p>
             </div>
-            <div class="second-hero-right">
-                <h3 class="second-hero-subtitle">Nuestra Visión</h3>
-                <p class="second-hero-text">Ser la alianza estratégica en la prestación de servicio técnico y a su vez en venta de refacciones y accesorios para la líneas de producción.</p>
-                <h3 class="second-hero-subtitle">Nuestra Misión</h3>
-                <p class="second-hero-text">Garantizar la continuidad operacional de nuestros clientes a través de soluciones eficientes, soporte y asistencia técnica que contribuyan al incremento de su productividad y mejora continua con un servicio de calidad al mejor costo del mercado.</p>
+            <div id="second-hero-last">
+
+                <div class="tarjeta-1">
+                    <img src="{% static 'img/icons/eye.png' %}" alt="ojo">
+                    <h3 class="second-hero-subtitle">Nuestra Visión</h3>
+                    <p class="second-hero-text">Ser la alianza estratégica en la prestación de servicio técnico y a su vez en venta de refacciones y accesorios para la líneas de producción.</p>
+                </div>
+
+                <div class="tarjeta-1">
+                    <img src="{% static 'img/icons/target.png' %}" alt="objetivo">
+                    <h3 class="second-hero-subtitle">Nuestra Misión</h3>
+                    <p class="second-hero-text">Garantizar la continuidad operacional de nuestros clientes a través de soluciones eficientes, soporte y asistencia técnica que contribuyan al incremento de su productividad y mejora continua con un servicio de calidad al mejor costo del mercado.</p>
+                </div>
+                
             </div>
         </div>
         
     </section> 
     
     <section id="third-hero">
-        <div class="third-hero-ctn">
+        <div class="third-hero-ctn" id="insumos">
             <h2 class="third-hero-title">Insumos y Servicios</h2>
 <!--             <h3 class="third-hero-subtitle">Asesoría, soporte técnico, mantención y/o reparación en las siguientes líneas</h3> -->
         </div>
     
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" onclick="openModal(1)">
                 <img src="{% static 'img/icons/impresora.png' %}" alt="Engineering Icon" class="service-icon">
                 <h4 class="service-title">Impresoras</h4>
                 <p class="service-description">Zebra, Data Max, Bixolon y Etiquetas.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal(2)">
                 <img src="{% static 'img/icons/cazador-de-focas.png' %}" alt="Construction Icon" class="service-icon">
                 <h4 class="service-title">Selladoras</h4>
                 <p class="service-description">Continuas, neumáticas, pedestal, bandas de Teflon.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal(3)">
                 <img src="{% static 'img/icons/envase.png' %}" alt="Procurement Icon" class="service-icon">
                 <h4 class="service-title">Envasadoras</h4>
                 <p class="service-description">Flowpack, Vacio, Termoformado.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" onclick="openModal(4)">
                 <img src="{% static 'img/icons/codigo-de-barras.png' %}" alt="Custom Fabrication Icon" class="service-icon">
                 <h4 class="service-title">Codificadoras</h4>
                 <p class="service-description">Inkjet, laser, termo transferencia (TTO; HOT STAMPING).</p>
             </div>
         </div>
     
-        <div class="services-description">
+        <div class="services-description" id="insumos-last">
             <div class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -88,37 +102,47 @@
             <div class="services-text">
     <!--             <p>En MAI, nos especializamos en la reparación, mantenimiento y optimización de maquinaria industrial clave para tu negocio. Desde etiquetadoras y envasadoras hasta selladoras y codificadoras, nuestro equipo de expertos garantiza que tus equipos funcionen de manera eficiente y confiable.</p> -->
                 <ul>
-                    <li>Reparación especializada: Soluciones rápidas y efectivas para maquinaria dañada.</li>
-                    <li>Mantenimiento preventivo: Maximizamos la vida útil de tus equipos.</li>
-                    <li>Optimización de procesos: Mejoramos la eficiencia de tus máquinas para aumentar la productividad.</li>
-                    <li>Soporte técnico: Asistencia profesional para resolver cualquier problema técnico.</li>
+                    <li>• Reparación especializada: Soluciones rápidas y efectivas para maquinaria dañada.</li>
+                    <li>• Mantenimiento preventivo: Maximizamos la vida útil de tus equipos.</li>
+                    <li>• Optimización de procesos: Mejoramos la eficiencia de tus máquinas para aumentar la productividad.</li>
+                    <li>• Soporte técnico: Asistencia profesional para resolver cualquier problema técnico.</li>
                 </ul>
             </div>
         </div>
     </section>
     
     <section id="fourth-hero">
-        <div class="contact-ctn" id="contactanos">
-            <h2 class="third-hero-title">Contactanos</h2>
+        <div class="contact-ctn"id="contactanos" >
+            <h2 class="third-hero-title">Contáctanos</h2>
         </div>
         <div class="fila">
-            <div class="tarjeta" id="wasap-ctn">
-                <img id="wasap" src="{% static 'img/icons/whatsapp.png' %}" alt="fourth-hero-img">
-                <h1>WhatsApp</h1>
-                <div>Contacta con nosotros por mensaje</div>
-            </div>
-            <div class="tarjeta">
-                <img src="{% static 'img/icons/telefono.png' %}" alt="fourth-hero-img">
-                <h1>Teléfono</h1>
-                <div>Llámanos directamente</div>
-            </div>
+            <a href="https://wa.me/56966289563?text=Hola,%20quiero%20más%20información" target="_blank">
+                <div class="tarjeta" id="whatsapp-ctn">
+                    <img id="whatsapp" src="{% static 'img/icons/whatsapp.png' %}" alt="fourth-hero-img">
+                    <h1>WhatsApp</h1>
+                    <div>Escribenos al +56 9 6628 9563</div>
+                    
+                </div>
+            </a>
+            <a href="tel:+56722971716">
+                <div class="tarjeta" id="telef-ctn">
+                    <img id="telef" src="{% static 'img/icons/telefono.png' %}" alt="fourth-hero-img">
+                    <h1>Teléfono</h1>
+                    <div>Lláma directamente al +56 72 297 1716</div>
+                </div>
+            </a>
+            
         </div>
         <div class="fila">
-            <div class="tarjeta">
-                <img src="{% static 'img/icons/correo-electronico.png' %}" alt="fourth-hero-img">
-                <h1>Información</h1>
-                <div>Para más detalles</div>
-            </div>
+
+            <a href="mailto:info@mai-latam.com?subject=Consulta&body=Hola,%20quisiera%20más%20información.">
+                <div class="tarjeta" id="correo-ctn">
+                    <img  id="correo"  src="{% static 'img/icons/correo-electronico.png' %}" alt="fourth-hero-img">
+                    <h1>Información</h1>
+                    <div>Enviar correo a info@mai-latam.com</div>
+                </div>  
+            </a>
+            
             <div class="tarjeta">
                 <img src="{% static 'img/icons/facebook.png' %}" alt="fourth-hero-img">
                 <h1>Redes Sociales</h1>
@@ -127,8 +151,110 @@
         </div>
         
     </section>
+
+    <!-- Modales -->
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Impresoras</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 1">
+                        <p class="image-caption">Impresora Industrial</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 2">
+                        <p class="image-caption">Impresora Térmica</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 3">
+                        <p class="image-caption">Impresora Láser</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Selladora</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 1">
+                        <p class="image-caption">Impresora Industrial</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 2">
+                        <p class="image-caption">Impresora Térmica</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 3">
+                        <p class="image-caption">Impresora Láser</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Envasadora</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 1">
+                        <p class="image-caption">Impresora Industrial</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 2">
+                        <p class="image-caption">Impresora Térmica</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 3">
+                        <p class="image-caption">Impresora Láser</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Codificadora</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 1">
+                        <p class="image-caption">Impresora Industrial</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 2">
+                        <p class="image-caption">Impresora Térmica</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="{% static 'img/etiqueta.jpg' %}" alt="Impresora 3">
+                        <p class="image-caption">Impresora Láser</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     {% include 'footer.html' %}
     <script src="{% static 'js/carusel.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/animation.js' %}"></script>
 </body>
 </html>
