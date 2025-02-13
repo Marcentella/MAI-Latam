@@ -406,9 +406,10 @@ a {
 }
 
 /*MARK: FOURTH section*/
-
 #fourth-hero {
     background-color: white;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 .contact-ctn{
@@ -419,25 +420,21 @@ a {
     margin-top: 30px;
 }
 
-.fila {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 15px;
+.contactcards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
-
 
 .tarjeta {
     background: white;
     border-radius: 16px;
-    padding: 15px;
+    padding: 20px;
     color: #1a1a1a;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    height: 40vh;
-    width: 100vh;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -456,7 +453,7 @@ a {
     width: 80px;
     height: 80px;
     margin-bottom: 1rem;
-    filter: none; /* Quitamos el filtro invert */
+    filter: none;
 }
 
 .tarjeta h1 {
@@ -482,8 +479,6 @@ a {
     text-align: center;
     line-height: 1.4;
 }
-
-
 /*MARK: FOURTH section*/
 
 
@@ -505,14 +500,17 @@ a {
     transition: 0.5s;
 }
 
-#correo-ctn:hover #correo {
-    filter: brightness(0) saturate(100%) invert(27%) sepia(90%) saturate(7489%) hue-rotate(350deg) brightness(90%) contrast(110%);
-    transition: 0.2s;
+#correo-ctn:hover img#correo {
+    filter: brightness(0) saturate(100%) invert(10%) sepia(100%) saturate(6000%) hue-rotate(350deg) brightness(60%) contrast(140%) !important;
+    transition: filter 0.2s ease-in-out;
 }
 
-#correo-ctn #correo{
-    transition: 0.5s;
+#correo-ctn img#correo {
+    transition: filter 0.5s ease-in-out;
 }
+
+
+
 
 /*MARK: Modal*/
 .modal {
@@ -622,6 +620,39 @@ a {
     font-family: sans-serif;
 }
 
+@keyframes closeModal {
+    0% {
+        transform: scale(1); /* Tamaño original */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.7); /* Se reduce a la mitad */
+        opacity: 0; /* Se desvanece */
+    }
+}
+
+.modal-content {
+    background: white;
+    padding: 0;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal.closeing .modal-content {
+    animation: closeModal 0s forwards; /* Aplica la animación de cierre */
+}
+
 /* MARK: Queries */
 
 @media (max-width: 960px) {
@@ -651,6 +682,8 @@ a {
        justify-content: center;
        align-items: center;
    }
+
+   
 }
 
 
@@ -662,6 +695,10 @@ a {
     #contacto {
         grid-template-columns: 1fr;
         width: 95%;
+    }
+
+    .contactcards {
+        grid-template-columns: 1fr;
     }
 
     .tarjeta {

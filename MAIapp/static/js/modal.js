@@ -71,14 +71,17 @@ class ModalManager {
     closeModal(modalId) {
         const modal = this.modals.get(modalId);
         if (!modal) return;
-
-        modal.element.classList.remove('show');
-
+    
+        // Añadimos la clase 'closing' para activar la animación de cierre
+        modal.element.classList.add('closing');
+    
         setTimeout(() => {
+            modal.element.classList.remove('show', 'closing'); // Quitamos las clases show y closing
             modal.element.style.display = 'none';
             this.activeModal = null;
-        }, 300);
+        }, 300); // Duración de la animación de cierre (300ms)
     }
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {
