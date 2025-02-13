@@ -113,7 +113,6 @@ li{
     color: #6495ED;
 }
 
-/* Hamburger */
 
 /* Queries */
 
@@ -167,7 +166,8 @@ li{
     }
 
     #logo{
-        display: none;
+        display: flex;
+        transform: scale(0.8)
     }
 
     #hamburger{
