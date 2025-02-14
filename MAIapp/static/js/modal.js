@@ -1,4 +1,4 @@
-class ModalManager {
+/* class ModalManager {
     constructor() {
         this.modals = new Map();
         this.activeModal = null;
@@ -87,3 +87,4 @@ class ModalManager {
 document.addEventListener('DOMContentLoaded', () => {
     window.modalManager = new ModalManager();
 });
+ */

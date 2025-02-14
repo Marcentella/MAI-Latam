@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const phoneCard = document.getElementById("telef-ctn");
 
     phoneCard.addEventListener("click", function () {
-        window.location.href = "tel:+56722971716";
+        window.location.href = "tel:+56966289563";
     });
 
     const link = phoneCard.querySelector("a");
